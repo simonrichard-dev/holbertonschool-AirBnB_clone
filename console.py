@@ -118,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.all()[arg[0] + '.' + arg[1]]
             except:
                 print('** no instance found **')
-            elif len(arg) == 2:
+            if len(arg) == 2:
                 print("** attribute name missing **")
             else:
                 print("** value missing **")
