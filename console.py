@@ -119,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.all()[arg[0] + '.' + arg[1]]
             except:
                 print('** no instance found **')
-                sys.exit(1)
+                return
             if len(arg) == 2:
                 print("** attribute name missing **")
             else:
