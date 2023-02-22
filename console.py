@@ -124,8 +124,8 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** value missing **")
         else:
-            setattr(instance, arg[2], arg[3])
-            instance.save()
+            setattr(storage, arg[2], arg[3])
+            storage.save()
 
 
 if __name__ == '__main__':
