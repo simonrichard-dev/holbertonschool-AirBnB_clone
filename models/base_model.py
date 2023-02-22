@@ -7,15 +7,18 @@ import models
 
 class BaseModel:
     """ base class """
+
     def __init__(self, *args, **kwargs):
         if kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
                 if key == "created_at":
-                    self.created_at = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                    self.created_at = datetime.strptime(
+                        value, "%Y-%m-%dT%H:%M:%S.%f")
                 if key == "updated_at":
-                    self.updated_at = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                    self.updated_at = datetime.strptime(
+                        value, "%Y-%m-%dT%H:%M:%S.%f")
                 if key == "my_number":
                     self.my_number = value
                 if key == "name":
