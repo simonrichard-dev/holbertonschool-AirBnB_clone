@@ -11,3 +11,11 @@ It is the first step towards building a full web application. This project is en
 - Creation of the class FileStorage which is a storage engine
 - Creation of the console
 - And making test files to handle errors we may encounter
+
+
+
+
+## AUTHORS
+
+- Ethan B benyayerethan@gmail.com
+- simonrichard-dev simon.insa@gmail.com
