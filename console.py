@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ base class """
 import cmd
+import sys
 from models.base_model import BaseModel
 from models import storage
 from models.engine.file_storage import FileStorage
@@ -118,6 +119,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.all()[arg[0] + '.' + arg[1]]
             except:
                 print('** no instance found **')
+                sys.exit(1)
             if len(arg) == 2:
                 print("** attribute name missing **")
             else:
