@@ -3,26 +3,27 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
     """class HBNB for Command Interpreter
     """
-    prompt = '(hbnb) '
+    prompt = '(shotgun !!!) '
     list_class = ['BaseModel']
 
     list_function = ['create']
 
-    def precmd(self, arg):
-        """parses command input"""
-        if '.' in arg and '(' in arg and ')' in arg:
-            my_class = arg.split('.')
-            my_func = my_class[1].split('(')
-            param=my_func[1].split(')')
-            if my_class[0] in HBNBCommand.list_class and \
-               my_func[0] in HBNBCommand.list_function:
-                arg = my_func[0] + ' ' + my_class[0] + ' ' + param[0]
-        return arg
+    #def precmd(self, arg):
+    #    """parses command input"""
+    #    if '.' in arg and '(' in arg and ')' in arg:
+    #        my_class = arg.split('.')
+    #        my_func = my_class[1].split('(')
+    #        param=my_func[1].split(')')
+    #        if my_class[0] in HBNBCommand.list_class and \
+    #           my_func[0] in HBNBCommand.list_function:
+    #            arg = my_func[0] + ' ' + my_class[0] + ' ' + param[0]
+    #    return arg
 
     def do_EOF(self, arg):
         """execute End of File line
@@ -49,45 +50,81 @@ class HBNBCommand(cmd.Cmd):
             print(new_instance.id)
   
     def do_show(self, arg):
+        arg = arg.split()
+
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg not in HBNBCommand.list_class:
+
+        elif arg[0] not in HBNBCommand.list_class:
             print("** class doesn't exist **")
-        elif arg not in id:
+
+        elif len(arg) == 1:
             print('** instance id missing **')
-        elif id not in new_instance:
-            print('** no instance found **')
+
         else:
-            print(new_instance.id)
+            try:
+                obj_to_show = storage.all()[arg[0] + '.' + arg[1]]
+            except:
+               print('** no instance found **')
+            else:
+                print(obj_to_show)
+
 
     def do_destroy(self, arg):
+        arg = arg.split()
+
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg not in HBNBCommand.list_class:
+        
+        elif arg[0] not in HBNBCommand.list_class:
             print("** class doesn't exist **")
-        elif arg not in id:
+        
+        elif len(arg) == 1:
             print('** instance id missing **')
-        elif id not in new_instance:
-            print('** no instance found **')
+
         else:
-            del(new_instance.id)
+            try:
+                obj_to_del = storage.all()
+                string = "{}.{}".format(arg[0], arg[1])
+                del obj_to_del[string]
+                storage.save()
+
+                print('yes')
+            except:
+               print('** no instance found **')
 
     def do_all(self, arg):
+        arg = arg.split()
+        objects = storage.all()
+
         if len(arg) == 0:
-            print("** class name missing **")
+            print([str(obj) for obj in objects.values()])
+        elif arg[0] not in self.class_name:
+            print("** class doesn't exist **")
         else:
-            print(somth)
+            print([str(obj) for obj in objects.values()
+                   if type(obj).__name__== arg[0]])
 
     def do_update(self, arg):
+        arg = arg.split()
+
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg not in HBNBCommand.list_class:
+        elif arg[0] not in HBNBCommand.list_class:
             print("** class doesn't exist **")
-        elif arg not in id:
+        elif len(arg) == 1:
             print('** instance id missing **')
-        elif arg not in id:
-            print('** instance id missing **')
-        """ AND SOME OTHER CONDITIONS BUT IM GONNA DO THEM TOMORROW """
+        elif len(arg) == 2:
+            try:
+                storage.all()[arg[0] + '.' + arg[1]]
+            except:
+                print('** no instance found **')
+            else:
+                print("** attribute name missing **")
+        elif len(arg) == 3:
+            print("** value missing **")
+        else:
+            print("Ethan Hunt")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
