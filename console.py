@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ base class """
 import cmd
-import sys
 from models.base_model import BaseModel
 from models import storage
 from models.engine.file_storage import FileStorage
