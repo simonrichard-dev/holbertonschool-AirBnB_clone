@@ -124,7 +124,8 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** value missing **")
         else:
-            print("Ethan Hunt")
+            setattr(instance, arg[2], arg[3])
+            instance.save()
 
 
 if __name__ == '__main__':
