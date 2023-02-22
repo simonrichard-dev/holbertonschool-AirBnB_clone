@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg) == 1:
             print('** instance id missing **')
-        elif len(arg) == 2:
+        elif len(arg) >= 2:
             try:
                 storage.all()[arg[0] + '.' + arg[1]]
             except:
