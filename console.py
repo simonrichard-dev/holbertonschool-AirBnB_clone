@@ -14,7 +14,7 @@ class HBNBCommand(cmd.Cmd):
 
     list_function = ['create']
 
-    #def precmd(self, arg):
+    # def precmd(self, arg):
     #    """parses command input"""
     #    if '.' in arg and '(' in arg and ')' in arg:
     #        my_class = arg.split('.')
@@ -29,7 +29,7 @@ class HBNBCommand(cmd.Cmd):
         """execute End of File line
         """
         return True
-    
+
     def do_quit(self, arg):
         """Quit commant to exit the program
         """
@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             new_instance = eval(arg)()
             new_instance.save()
             print(new_instance.id)
-  
+
     def do_show(self, arg):
         arg = arg.split()
 
@@ -65,20 +65,19 @@ class HBNBCommand(cmd.Cmd):
             try:
                 obj_to_show = storage.all()[arg[0] + '.' + arg[1]]
             except:
-               print('** no instance found **')
+                print('** no instance found **')
             else:
                 print(obj_to_show)
-
 
     def do_destroy(self, arg):
         arg = arg.split()
 
         if len(arg) == 0:
             print("** class name missing **")
-        
+
         elif arg[0] not in HBNBCommand.list_class:
             print("** class doesn't exist **")
-        
+
         elif len(arg) == 1:
             print('** instance id missing **')
 
@@ -91,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
 
                 print('yes')
             except:
-               print('** no instance found **')
+                print('** no instance found **')
 
     def do_all(self, arg):
         arg = arg.split()
@@ -99,11 +98,11 @@ class HBNBCommand(cmd.Cmd):
 
         if len(arg) == 0:
             print([str(obj) for obj in objects.values()])
-        elif arg[0] not in self.class_name:
+        elif arg[0] not in HBNBCommand.list_class:
             print("** class doesn't exist **")
         else:
             print([str(obj) for obj in objects.values()
-                   if type(obj).__name__== arg[0]])
+                   if type(obj).__name__ == arg[0]])
 
     def do_update(self, arg):
         arg = arg.split()
@@ -125,6 +124,7 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
         else:
             print("Ethan Hunt")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
