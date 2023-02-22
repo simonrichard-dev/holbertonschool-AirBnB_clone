@@ -47,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
             new_instance = eval(arg)()
             new_instance.save()
             print(new_instance.id)
-    
+  
     def do_show(self, arg):
         if len(arg) == 0:
             print("** class name missing **")
@@ -55,10 +55,39 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif arg not in id:
             print('** instance id missing **')
-        elif new_instance not in id:
+        elif id not in new_instance:
             print('** no instance found **')
         else:
             print(new_instance.id)
+
+    def do_destroy(self, arg):
+        if len(arg) == 0:
+            print("** class name missing **")
+        elif arg not in HBNBCommand.list_class:
+            print("** class doesn't exist **")
+        elif arg not in id:
+            print('** instance id missing **')
+        elif id not in new_instance:
+            print('** no instance found **')
+        else:
+            del(new_instance.id)
+
+    def do_all(self, arg):
+        if len(arg) == 0:
+            print("** class name missing **")
+        else:
+            print(somth)
+
+    def do_update(self, arg):
+        if len(arg) == 0:
+            print("** class name missing **")
+        elif arg not in HBNBCommand.list_class:
+            print("** class doesn't exist **")
+        elif arg not in id:
+            print('** instance id missing **')
+        elif arg not in id:
+            print('** instance id missing **')
+        """ AND SOME OTHER CONDITIONS BUT IM GONNA DO THEM TOMORROW """
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
