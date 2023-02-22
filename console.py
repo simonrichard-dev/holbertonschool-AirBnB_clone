@@ -115,7 +115,8 @@ class HBNBCommand(cmd.Cmd):
             print('** instance id missing **')
         elif len(arg) >= 2:
             try:
-                storage.all()[arg[0] + '.' + arg[1]]
+                obj = storage.all()[arg[0] + '.' + arg[1]]
+
             except:
                 print('** no instance found **')
                 return
@@ -124,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** value missing **")
         else:
-            setattr(storage, arg[2], arg[3])
+            setattr(obj, arg[2], arg[3])
             storage.save()
 
 
