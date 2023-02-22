@@ -7,6 +7,7 @@ from io import StringIO
 
 class TestBase(unittest.TestCase):
     """ unittest """
+
     def test_init(self):
         basemodel = BaseModel()
         basemodel.id = "3th4N - 5im0n"
