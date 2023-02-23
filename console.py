@@ -12,13 +12,12 @@ from models.place import Place
 from models.review import Review
 
 
-
 class HBNBCommand(cmd.Cmd):
     """class HBNB for Command Interpreter
     """
     prompt = '(shotgun !!!) '
-    list_class = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place', 'Review']
-
+    list_class = ['BaseModel', 'User', 'State', 'City', 'Amenity',
+                  'Place', 'Review']
 
     def do_EOF(self, arg):
         """execute End of File line
