@@ -10,15 +10,15 @@ from io import StringIO
 class TestAmenity(unittest.TestCase):
     """ unittest for amenity file """
 
-    def test_(self):
+    def test_name(self):
         amenity = Amenity()
         amenity.name = ""
         self.assertEqual(amenity.name, "")
 
-    def test_instance(self):
-        amenity = Amenity()
-        self.assertIsInstance(amenity, Amenity)
+    def test_class(self):
+        testamenity = Amenity()
+        self.assertEqual(testamenity.__class__.__name__, "Amenity")
 
-    def test_id(self):
-        amenity = Amenity()
-        self.assertEqual(str, type(amenity.id))
+    def test_subclass(self):
+        testamenity = Amenity()
+        self.assertTrue(issubclass(testamenity.__class__, BaseModel))
