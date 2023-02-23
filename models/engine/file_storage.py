@@ -16,7 +16,7 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         key = f"{obj.__class__.__name__}.{obj.id}"
