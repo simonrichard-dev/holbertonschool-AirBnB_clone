@@ -15,7 +15,7 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """class HBNB for Command Interpreter
     """
-    prompt = '(dinu) '
+    prompt = '(hbnb) '
     list_class = ['BaseModel', 'User', 'State', 'City', 'Amenity',
                   'Place', 'Review']
 
