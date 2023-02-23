@@ -11,6 +11,7 @@ from io import StringIO
 
 class TestPlace(unittest.TestCase):
     """ unittest for place file """
+
     def test_instance(self):
         """test the creation of a Place instance"""
         p = Place()
@@ -59,7 +60,7 @@ class TestPlace(unittest.TestCase):
         place = Place()
         place.city_id = "42"
         self.assertEqual(place.city_id, "42")
-    
+
     def test_user_id(self):
         place = Place()
         place.user_id = "0626839210"
@@ -69,7 +70,7 @@ class TestPlace(unittest.TestCase):
         place = Place()
         place.name = "San Francisco"
         self.assertEqual(place.name, "San Francisco")
- 
+
     def test_description(self):
         place = Place()
         place.description = "La maison de Julien Barbier"
@@ -108,4 +109,5 @@ class TestPlace(unittest.TestCase):
     def test_amenity_ids(self):
         place = Place()
         place.amenity_ids = ["Computer", "Wifi", "Coffee Machine"]
-        self.assertEqual(place.amenity_ids, ["Computer", "Wifi", "Coffee Machine"])
+        self.assertEqual(place.amenity_ids, [
+                         "Computer", "Wifi", "Coffee Machine"])

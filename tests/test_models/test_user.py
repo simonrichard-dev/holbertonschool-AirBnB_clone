@@ -58,4 +58,3 @@ class TestUser(unittest.TestCase):
 
     def test_class_exist(self):
         self.assertEqual(str(type(self.user)), "<class 'models.user.User'>")
-
