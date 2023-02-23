@@ -1,29 +1,30 @@
 #!/usr/bin/python3
-""" test city """
+"Unit tests for City class"
 import unittest
-from models.base_model import BaseModel
 from models.city import City
 from models.state import State
-from io import StringIO
 
 
 class TestCity(unittest.TestCase):
-    """ unittest for city file """
-
-    def test_city_id(self):
-        city = City()
-        city.state_id = ""
-        self.assertEqual(city.state_id, "")
-
-    def test_city_name(self):
-        city = City()
-        city.name = ""
-        self.assertEqual(city.name, "")
+    "Unit tests suite for City class"
 
     def test_instance(self):
-        city = City()
-        self.assertIsInstance(city, City)
+        "Test instance"
+        hohio = City()
+        self.assertIsInstance(hohio, City)
+
+    def test_city_name(self):
+        "Test city name"
+        hohio = City()
+        self.assertEqual("", hohio.name)
 
     def test_id(self):
-        city = City()
-        self.asserEqual(str, type(city.id))
+        "Test id"
+        hohio = City()
+        self.assertEqual(str, type(hohio.id))
+
+    def test_state_id(self):
+        "Test state id"
+        hohio = City()
+        self.assertEqual("", hohio.state_id)
+
