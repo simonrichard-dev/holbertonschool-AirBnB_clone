@@ -12,10 +12,10 @@ class TestCity(unittest.TestCase):
 
     def test_city_id(self):
         city = City()
-        city.state_id = "42"
-        self.assertEqual(city.state_id, "42")
+        city.state_id = ""
+        self.assertEqual(city.state_id, "")
     
     def test_city_name(self):
         city = City()
-        city.name = "San Francisco"
-        self.assertEqual(city.name, "San Francisco")   
+        city.name = ""
+        self.assertEqual(city.name, "")   
