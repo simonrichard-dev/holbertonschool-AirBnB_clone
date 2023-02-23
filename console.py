@@ -34,6 +34,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
+        """ create a class with name as param """
         if len(arg) == 0:
             print("** class name missing **")
         elif arg not in HBNBCommand.list_class:
@@ -44,6 +45,7 @@ class HBNBCommand(cmd.Cmd):
             print(new_instance.id)
 
     def do_show(self, arg):
+        """ show a class using classname and ID """
         arg = arg.split()
 
         if len(arg) == 0:
@@ -64,6 +66,7 @@ class HBNBCommand(cmd.Cmd):
                 print(obj_to_show)
 
     def do_destroy(self, arg):
+        """ destroy a class using name and ID """
         arg = arg.split()
 
         if len(arg) == 0:
@@ -82,11 +85,11 @@ class HBNBCommand(cmd.Cmd):
                 del obj_to_del[string]
                 storage.save()
 
-                print('yes')
             except:
                 print('** no instance found **')
 
     def do_all(self, arg):
+        """ show all class that have been created """
         arg = arg.split()
         objects = storage.all()
 
@@ -99,6 +102,7 @@ class HBNBCommand(cmd.Cmd):
                    if type(obj).__name__ == arg[0]])
 
     def do_update(self, arg):
+        """ update a class using classname and id  """
         arg = arg.split()
 
         if len(arg) == 0:
