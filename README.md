@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="https://github.com/Ethan1709/holbertonschool-AirBnB_clone/blob/main/logo.png" alt="HolbertonBnB logo">
+</p>
+
+<h1 align="center">HolbertonBnB</h1>
+<p align="center">An AirBnB clone.</p>
+---
+
 # AirBnB clone - The console
 
 A group project at Holberton-School Paris
