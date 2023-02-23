@@ -14,3 +14,11 @@ class TestAmenity(unittest.TestCase):
         amenity = Amenity()
         amenity.name = "Computer"
         self.assertEqual(amenity.name, "Computer")
+
+    def test_instance(self):
+        amenity = Amenity()
+        self.assertIsInstance(amenity, Amenity)
+
+    def test_id(self):
+        amenity = Amenity()
+        self.assertEqual(str, type(amenity.id))

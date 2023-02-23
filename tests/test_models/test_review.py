@@ -24,3 +24,11 @@ class TestReview(unittest.TestCase):
         review = Review()
         review.text = "Cute place to discover SF near Holberton School"
         self.assertEqual(review.text, "Cute place to discover SF near Holberton School")
+
+    def test_instance(self):
+        review = Review()
+        self.assertIsInstance(review, Review)
+
+    def test_id(self):
+        review = Review()
+        self.assertEqual(str, type(review.id))
