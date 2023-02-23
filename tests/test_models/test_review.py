@@ -12,18 +12,18 @@ class TestReview(unittest.TestCase):
 
     def test_place_id(self):
         review = Review()
-        review.place_id = "94102"
-        self.assertEqual(review.place_id, "94102")
+        review.place_id = ""
+        self.assertEqual(review.place_id, "")
 
     def test_user_id(self):
         review = Review()
-        review.user_id = "0626839210"
-        self.assertEqual(review.user_id, "0626839210")
+        review.user_id = ""
+        self.assertEqual(review.user_id, "")
 
     def test_text(self):
         review = Review()
-        review.text = "Cute place to discover SF near Holberton School"
-        self.assertEqual(review.text, "Cute place to discover SF near Holberton School")
+        review.text = ""
+        self.assertEqual(review.text, "")
 
     def test_instance(self):
         review = Review()

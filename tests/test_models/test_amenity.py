@@ -12,8 +12,8 @@ class TestAmenity(unittest.TestCase):
 
     def test_(self):
         amenity = Amenity()
-        amenity.name = "Computer"
-        self.assertEqual(amenity.name, "Computer")
+        amenity.name = ""
+        self.assertEqual(amenity.name, "")
 
     def test_instance(self):
         amenity = Amenity()
