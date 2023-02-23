@@ -12,8 +12,7 @@ class TestState(unittest.TestCase):
 
     def test_name(self):
         state = State()
-        state.name = "California"
-        self.assertEqual(state.name, "California")
+        self.assertEqual("", state.name)
 
     def test_instance(self):
         state = State()
