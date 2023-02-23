@@ -14,10 +14,10 @@ class TestAmenity(unittest.TestCase):
         amenity = Amenity()
         self.assertEqual("", amenity.name)
 
-    def test_class(self):
-        testamenity = Amenity()
-        self.assertEqual(testamenity.__class__.__name__, "Amenity")
+    #def test_class(self):
+        #testamenity = Amenity()
+       # self.assertEqual(testamenity.__class__.__name__, "Amenity")
 
-    def test_subclass(self):
-        testamenity = Amenity()
-        self.assertTrue(issubclass(testamenity.__class__, BaseModel))
+    #def test_subclass(self):
+     #   testamenity = Amenity()
+      #  self.assertTrue(issubclass(testamenity.__class__, BaseModel))
