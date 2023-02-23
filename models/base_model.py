@@ -30,7 +30,7 @@ class BaseModel:
             models.storage.new(self)
 
     def __str__(self):
-        return (f"[{__class__.__name__}] ({self.id}) {self.__dict__}")
+        return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
 
     def save(self):
         self.updated_at = datetime.now()
@@ -38,7 +38,7 @@ class BaseModel:
 
     def to_dict(self):
         new_dict = self.__dict__.copy()
-        new_dict["__class__"] = __class__.__name__
+        new_dict["__class__"] = self.__class__.__name__
         new_dict["created_at"] = datetime.isoformat(self.created_at)
         new_dict["updated_at"] = datetime.isoformat(self.updated_at)
         return new_dict

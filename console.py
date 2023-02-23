@@ -4,13 +4,15 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from models.engine.file_storage import FileStorage
+from models.user import User
+
 
 
 class HBNBCommand(cmd.Cmd):
     """class HBNB for Command Interpreter
     """
     prompt = '(shotgun !!!) '
-    list_class = ['BaseModel']
+    list_class = ['BaseModel', 'User']
 
     list_function = ['create']
 
