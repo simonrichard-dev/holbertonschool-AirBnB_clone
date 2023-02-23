@@ -18,4 +18,12 @@ class TestCity(unittest.TestCase):
     def test_city_name(self):
         city = City()
         city.name = ""
-        self.assertEqual(city.name, "")   
+        self.assertEqual(city.name, "")
+
+    def test_instance(self):
+        city = City()
+        self.assertIsInstance(city, City)
+
+    def test_id(self):
+        city = City()
+        self.asserEqual(str, type(city.id))
