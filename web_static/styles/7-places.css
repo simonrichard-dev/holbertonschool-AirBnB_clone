@@ -1,0 +1,29 @@
+.places {
+    height: 200px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.article {
+    border: #FF5A5F solid 1px;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px;
+    width: 390px;
+    text-align: center;
+}
+
+.booking {
+    padding-left: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+h1 {
+    padding-left: 25px;
+}
